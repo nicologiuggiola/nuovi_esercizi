@@ -75,3 +75,46 @@ console.log(arrayOfVowels(nuovaStringa));
 
 
 
+let athlete1 = {name: "giovanni", surname:"landi", position: 2}
+let athlete2 = {name: "lorena", surname:"landi", position: 2}
+let athlete3 = {name: "pippo", surname:"barbigli", position: 1}
+let athlete4 = {name: "simona", surname:"perri", position: 3}
+let athlete5 = {name: "elmo", surname:"recalcati", position: 2}
+
+let athletes = [athlete1, athlete2, athlete3, athlete4, athlete5];
+
+
+
+//console.log([...athletes]);
+
+
+//athletes.sort((s1, s2)=> s1.position - s2.position)
+
+function compareBySurname(stud1, stud2) {
+    
+}
+
+function compareByPosition(stud1, stud2) {
+    
+}
+
+function compareByPositionPlus(stud1, stud2) {
+    if (stud1.position > stud2.position) {
+        return 1;
+    }
+
+    if (stud1.position < stud2.position) {
+        return -1;
+    }
+
+    if (stud1.position === stud2.position) {
+        if (stud1.surname.localeCompare(stud2.surname) !== 0) {
+            return stud1.surname.localeCompare(stud2.surname);
+        }
+        else{
+            return stud1.name.localeCompare(stud2.name);
+        }
+    }
+}
+
+console.log(athletes.sort(compareByPositionPlus));
