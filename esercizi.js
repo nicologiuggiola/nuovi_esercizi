@@ -118,3 +118,48 @@ function compareByPositionPlus(stud1, stud2) {
 }
 
 console.log(athletes.sort(compareByPositionPlus));
+
+
+let testArray1 = ["La", "Vergogna", "Casa", "Dannazione", "Ha", "Pippo", "Preso", "Secchio", "Fuoco"];
+
+function SwapCase(string) {
+    const firstChar = string[0];
+    const firstCharLower = firstChar.toLowerCase();
+    const remainingString = string.substring(1);
+    const remainingStringUpper = remainingString.toUpperCase();
+
+    return firstCharLower + remainingStringUpper;
+}
+
+console.log(testArray1.map(SwapCase));
+
+console.log(testArray1.map((s) => s[0].toLowerCase() + s.substring(1).toUpperCase()));
+
+console.log(testArray1.reduce((p, c) => [...p, SwapCase(c)], []));
+
+function filterChar(stringToCheck) {
+    // if(string.includes("r")){
+    //     return true;
+    // } else {
+    //     return false;
+    // }
+
+    return (string) => s.toLowerCase().includes(stringToCheck)
+}
+
+
+
+console.log(filterChar("pippo", "r"));
+
+//console.log(testArray1.filter(filterChar));
+
+console.log(testArray1.filter((s) => filterChar(s, "p")));
+
+//console.log(testArray1.reduce((p,c) => filterChar(c) ? [...p, c] : p, []));
+
+
+
+
+
+
+
